@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modelos de Homepage Institucional · Tenda de Jurema Reis Malunguinho</title>
+<meta name="description" content="Cinco modelos de homepage institucional para a Tenda de Jurema Reis Malunguinho, com paleta derivada da logo oficial.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noite:#0B0806;
+  --carvao:#16110C;
+  --terra:#241A12;
+  --terra-2:#3E2C1E;
+  --bronze:#9C7A45;
+  --ouro:#C9A45C;
+  --ouro-claro:#E8CE9A;
+  --ouro-brilho:#F7E7C0;
+  --verde-900:#1B2718;
+  --verde-700:#2B3D26;
+  --verde-500:#4A6340;
+  --verde-300:#7A9668;
+  --areia:#E2D3B8;
+  --areia-clara:#F2E7D5;
+  --txt:#EADFCB;
+  --txt-suave:#A99B82;
+  --linha:rgba(201,164,92,.24);
+  --display:'Cinzel',Georgia,serif;
+  --sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --max:1240px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--noite);color:var(--txt);font-family:var(--sans);font-size:16px;line-height:1.7;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(900px 600px at 50% -8%,rgba(201,164,92,.10),transparent 62%),
+    radial-gradient(700px 500px at 100% 100%,rgba(74,99,64,.12),transparent 62%);
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.2;margin:0;letter-spacing:.02em}
+.wrap{width:min(100% - 2.5rem,var(--max));margin-inline:auto;position:relative;z-index:1}
+section{position:relative;z-index:1}
+
+/* header */
+header{border-bottom:1px solid var(--linha);background:rgba(11,8,6,.8);backdrop-filter:blur(14px);position:sticky;top:0;z-index:50}
+.nav{display:flex;align-items:center;gap:1.2rem;min-height:76px}
+.brand{display:flex;align-items:center;gap:.85rem;margin-right:auto}
+.brand img{width:48px;height:48px;border-radius:50%;object-fit:cover;border:1px solid rgba(201,164,92,.5)}
+.brand b{font-family:var(--display);font-size:.9rem;letter-spacing:.1em;text-transform:uppercase;color:var(--areia-clara);display:block}
+.brand span{font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ouro)}
+.menu{display:flex;gap:1.4rem;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+.menu a{font-size:.74rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--txt-suave);transition:color .2s}
+.menu a:hover{color:var(--ouro-claro)}
+
+/* hero */
+.hero{padding:3.6rem 0 2.4rem;text-align:center}
+.hero .eyebrow{font-size:.7rem;letter-spacing:.4em;text-transform:uppercase;color:var(--ouro);margin:0 0 1rem}
+.hero h1{font-size:clamp(1.7rem,5vw,3.1rem);color:var(--areia-clara)}
+.hero h1 em{
+  font-style:normal;display:block;
+  background:linear-gradient(180deg,var(--ouro-brilho),var(--ouro) 45%,var(--bronze));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p{max-width:70ch;margin:1.3rem auto 0;color:var(--txt-suave);font-weight:300;font-size:1.05rem}
+.nota{
+  max-width:78ch;margin:2rem auto 0;border:1px solid var(--linha);background:rgba(36,26,18,.5);
+  padding:1.1rem 1.4rem;text-align:left;font-size:.9rem;color:var(--txt-suave);
+}
+.nota b{color:var(--ouro-claro)}
+
+/* seções */
+.sec{padding:3.4rem 0}
+.sec--alt{background:linear-gradient(180deg,rgba(27,39,24,.5),rgba(11,8,6,.2));border-block:1px solid var(--linha)}
+.cabeca{text-align:center;margin-bottom:2.6rem}
+.cabeca .kicker{font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;color:var(--ouro);display:block;margin-bottom:.7rem}
+.cabeca h2{font-size:clamp(1.4rem,3.4vw,2.2rem);color:var(--areia-clara)}
+.cabeca p{max-width:66ch;margin:1rem auto 0;color:var(--txt-suave);font-weight:300}
+
+/* paleta */
+.paleta{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--linha);border:1px solid var(--linha)}
+.cor{background:var(--carvao);padding:0}
+.cor .amostra{height:96px}
+.cor .dados{padding:.9rem 1rem}
+.cor b{display:block;font-size:.86rem;color:var(--areia-clara);font-weight:600}
+.cor code{font-family:ui-monospace,Consolas,monospace;font-size:.78rem;color:var(--ouro);display:block;margin-top:.15rem}
+.cor span{display:block;font-size:.72rem;color:var(--txt-suave);margin-top:.35rem;line-height:1.45}
+
+.familias{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.2rem;margin-top:1.6rem}
+.familia{border:1px solid var(--linha);background:rgba(22,17,12,.7);padding:1.3rem}
+.familia h3{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ouro);margin-bottom:.6rem}
+.familia p{margin:0;font-size:.9rem;color:var(--txt-suave);font-weight:300}
+.familia .pct{font-family:var(--display);font-size:1.6rem;color:var(--areia-clara);display:block;margin-bottom:.3rem}
+
+/* modelos */
+.modelos{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem}
+.modelo{
+  border:1px solid var(--linha);background:linear-gradient(180deg,rgba(22,17,12,.88),rgba(11,8,6,.6));
+  display:flex;flex-direction:column;overflow:hidden;transition:border-color .3s,transform .3s;
+}
+.modelo:hover{border-color:rgba(201,164,92,.6);transform:translateY(-4px)}
+.modelo .topo{display:flex;align-items:center;gap:.9rem;padding:1.2rem 1.4rem;border-bottom:1px solid var(--linha)}
+.modelo .n{
+  width:42px;height:42px;flex:none;border-radius:50%;display:grid;place-items:center;
+  font-family:var(--display);font-size:1.1rem;color:var(--noite);
+  background:linear-gradient(145deg,var(--ouro-claro),var(--bronze));
+}
+.modelo .topo h3{font-size:1.12rem;color:var(--areia-clara)}
+.modelo .topo span{display:block;font-family:var(--sans);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ouro);margin-top:.15rem}
+.preview{position:relative;aspect-ratio:1440/1120;overflow:hidden;background:var(--noite);border-bottom:1px solid var(--linha)}
+.preview iframe{position:absolute;top:0;left:0;width:1440px;height:1120px;border:0;transform-origin:0 0}
+.preview .aviso{
+  position:absolute;inset:auto 0 0 0;padding:.5rem .9rem;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--txt-suave);background:linear-gradient(0deg,rgba(11,8,6,.92),transparent);pointer-events:none;
+}
+.modelo .corpo{padding:1.3rem 1.4rem 1.5rem;display:flex;flex-direction:column;flex:1;gap:.9rem}
+.modelo .desc{margin:0;font-size:.94rem;color:var(--txt-suave);font-weight:300}
+.modelo dl{margin:0;display:grid;gap:.5rem}
+.modelo dt{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ouro)}
+.modelo dd{margin:.1rem 0 0;font-size:.88rem;color:var(--txt)}
+.quando{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:auto;padding-top:.4rem}
+.pill{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--linha);border-radius:100px;padding:.25rem .65rem;color:var(--txt-suave)}
+.pill--on{border-color:rgba(122,150,104,.6);color:var(--verde-300)}
+
+/* tabela comparativa */
+.tabela-wrap{overflow-x:auto;border:1px solid var(--linha)}
+table{width:100%;border-collapse:collapse;min-width:820px;font-size:.88rem}
+th,td{padding:.85rem 1rem;text-align:left;border-bottom:1px solid rgba(201,164,92,.14)}
+thead th{
+  background:rgba(36,26,18,.9);font-family:var(--display);font-size:.74rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ouro-claro);position:sticky;top:0;
+}
+tbody th{font-weight:600;color:var(--areia-clara);background:rgba(22,17,12,.6);white-space:nowrap}
+tbody td{color:var(--txt-suave);font-weight:300}
+tbody tr:hover td{background:rgba(201,164,92,.05)}
+.sim{color:var(--verde-300)}
+.nao{color:#A2705A}
+
+/* listas */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem}
+.bloco{border:1px solid var(--linha);background:rgba(22,17,12,.62);padding:1.6rem}
+.bloco h3{font-size:1rem;color:var(--areia-clara);margin-bottom:1rem;letter-spacing:.06em}
+.bloco ol,.bloco ul{margin:0;padding-left:1.2rem;display:grid;gap:.6rem}
+.bloco li{font-size:.92rem;color:var(--txt-suave);font-weight:300}
+.bloco li b{color:var(--txt);font-weight:600}
+.bloco code{font-family:ui-monospace,Consolas,monospace;font-size:.82rem;color:var(--ouro);background:rgba(201,164,92,.08);padding:.1rem .35rem;border-radius:4px}
+
+footer{border-top:1px solid var(--linha);padding:2.4rem 0;text-align:center;color:var(--txt-suave);font-size:.82rem;position:relative;z-index:1}
+
+@media (max-width:900px){
+  .modelos,.cols{grid-template-columns:1fr}
+  .menu{display:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <img src="assets/logo.jpg" alt="Emblema da Tenda de Jurema Reis Malunguinho">
+      <span><b>Tenda de Jurema</b><span>Reis Malunguinho</span></span>
+    </a>
+    <ul class="menu">
+      <li><a href="#modelos">Modelos</a></li>
+      <li><a href="#paleta">Paleta</a></li>
+      <li><a href="#comparativo">Comparativo</a></li>
+      <li><a href="#checklist">Checklist</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Levantamento de requisitos · Etapa 1 — Site institucional</p>
+      <h1>Cinco modelos de <em>homepage institucional</em></h1>
+      <p>
+        Protótipos navegáveis construídos a partir do documento de especificação de requisitos
+        (RF-001 a RF-007 e RF-015) e da paleta cromática extraída da logo oficial da Tenda.
+      </p>
+      <div class="nota">
+        <b>Como usar:</b> clique em qualquer modelo para abrir a homepage completa em tamanho real e navegar
+        pelas seções. Os modelos são independentes entre si — é possível aprovar um, ou combinar seções de
+        modelos diferentes (ex.: capa do Cerimonial + módulos do Portal).
+        <br><br>
+        <b>Importante:</b> todo o texto, datas, eventos, valores e dados de contato são
+        <b>conteúdo de exemplo</b>, criado apenas para dar forma ao layout. Nada foi publicado nem extraído
+        de fontes reais — a Direção precisa validar e substituir cada trecho (ver o checklist ao final).
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec--alt" id="modelos">
+    <div class="wrap">
+      <div class="cabeca">
+        <span class="kicker">Os modelos</span>
+        <h2>Escolha um ponto de partida</h2>
+        <p>Cada modelo parte da mesma logo e da mesma paleta, mas organiza a informação de forma diferente.</p>
+      </div>
+
+      <div class="modelos">
+
+        <article class="modelo">
+          <div class="topo">
+            <span class="n">1</span>
+            <div><h3>Altar</h3><span>Clássico sóbrio · heráldico</span></div>
+          </div>
+          <div class="preview"><iframe src="modelo-1-altar/index.html" title="Prévia do Modelo 1 — Altar" loading="lazy" scrolling="no"></iframe><span class="aviso">Prévia · clique no título para abrir</span></div>
+          <div class="corpo">
+            <p class="desc">
+              Emblema em destaque absoluto, fundo escuro terroso, tipografia romana com filetes dourados.
+              Trata a Tenda com o peso de uma instituição centenária: solene, respeitoso e atemporal.
+            </p>
+            <dl>
+              <dt>Ideal para</dt>
+              <dd>Transmitir tradição, seriedade e permanência. Público mais velho e institucional.</dd>
+              <dt>Destaque</dt>
+              <dd>Emblema heroico com halo dourado + faixa de pilares (Tradição, Comunidade, Organização, Respeito).</dd>
+            </dl>
+            <div class="quando">
+              <span class="pill pill--on">Sóbrio</span><span class="pill pill--on">Dark</span>
+              <span class="pill">Alta percepção de tradição</span><span class="pill">Menos “leve”</span>
+            </div>
+            <a class="btn" style="display:inline-block;text-align:center;padding:.8rem 1.2rem;border:1px solid var(--bronze);color:var(--ouro-claro);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase" href="modelo-1-altar/index.html">Abrir Modelo 1 →</a>
+          </div>
+        </article>
+
+        <article class="modelo">
+          <div class="topo">
+            <span class="n">2</span>
+            <div><h3>Jurema Viva</h3><span>Orgânico · acolhedor</span></div>
+          </div>
+          <div class="preview"><iframe src="modelo-2-jurema-viva/index.html" title="Prévia do Modelo 2 — Jurema Viva" loading="lazy" scrolling="no"></iframe><span class="aviso">Prévia · clique no título para abrir</span></div>
+          <div class="corpo">
+            <p class="desc">
+              Fundo em tom de pergaminho, verde-folha como cor principal e o emblema dentro de uma forma
+              orgânica que se move lentamente. Comunica acolhimento antes de qualquer palavra.
+            </p>
+            <dl>
+              <dt>Ideal para</dt>
+              <dd>Atrair e acolher novos visitantes, famílias e pessoas em busca da casa.</dd>
+              <dt>Destaque</dt>
+              <dd>Formulário de contato com triagem por assunto (“Quero ser membro”, “Quero visitar”).</dd>
+            </dl>
+            <div class="quando">
+              <span class="pill pill--on">Claro</span><span class="pill pill--on">Acolhedor</span>
+              <span class="pill">Converte visitante em membro</span><span class="pill">Menos formal</span>
+            </div>
+            <a class="btn" style="display:inline-block;text-align:center;padding:.8rem 1.2rem;border:1px solid var(--bronze);color:var(--ouro-claro);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase" href="modelo-2-jurema-viva/index.html">Abrir Modelo 2 →</a>
+          </div>
+        </article>
+
+        <article class="modelo">
+          <div class="topo">
+            <span class="n">3</span>
+            <div><h3>Editorial</h3><span>Revista · cultural</span></div>
+          </div>
+          <div class="preview"><iframe src="modelo-3-editorial/index.html" title="Prévia do Modelo 3 — Editorial" loading="lazy" scrolling="no"></iframe><span class="aviso">Prévia · clique no título para abrir</span></div>
+          <div class="corpo">
+            <p class="desc">
+              Tratamento de jornal cultural: manchete grande com capitular, colunas justificadas, agenda em
+              tabela e acervo em mosaico. Dá voz à Tenda em vez de apenas apresentá-la.
+            </p>
+            <dl>
+              <dt>Ideal para</dt>
+              <dd>Publicar comunicados, artigos e memória da casa com credibilidade editorial.</dd>
+              <dt>Destaque</dt>
+              <dd>Modelo perfeito para o requisito de comunicados (RF-004 / RF-012) crescer sem retrabalho.</dd>
+            </dl>
+            <div class="quando">
+              <span class="pill pill--on">Muito texto</span><span class="pill pill--on">Cultural</span>
+              <span class="pill">Escala bem com conteúdo</span><span class="pill">Exige redação contínua</span>
+            </div>
+            <a class="btn" style="display:inline-block;text-align:center;padding:.8rem 1.2rem;border:1px solid var(--bronze);color:var(--ouro-claro);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase" href="modelo-3-editorial/index.html">Abrir Modelo 3 →</a>
+          </div>
+        </article>
+
+        <article class="modelo">
+          <div class="topo">
+            <span class="n">4</span>
+            <div><h3>Portal</h3><span>Funcional · acesso rápido</span></div>
+          </div>
+          <div class="preview"><iframe src="modelo-4-portal/index.html" title="Prévia do Modelo 4 — Portal" loading="lazy" scrolling="no"></iframe><span class="aviso">Prévia · clique no título para abrir</span></div>
+          <div class="corpo">
+            <p class="desc">
+              Estrutura de serviço: busca, quatro atalhos no topo (“Agenda”, “Comunicados”, “Sou membro”,
+              “Quero doar”), painel da Área de Membros e bloco de transparência com documentos.
+            </p>
+            <dl>
+              <dt>Ideal para</dt>
+              <dd>Ser a base da plataforma completa, já antecipando membros, cotas e prestação de contas.</dd>
+              <dt>Destaque</dt>
+              <dd>Único modelo que já mostra o que o membro encontra dentro da área restrita.</dd>
+            </dl>
+            <div class="quando">
+              <span class="pill pill--on">Claro</span><span class="pill pill--on">Funcional</span>
+              <span class="pill">Ponte para a plataforma</span><span class="pill">Menos “emocional”</span>
+            </div>
+            <a class="btn" style="display:inline-block;text-align:center;padding:.8rem 1.2rem;border:1px solid var(--bronze);color:var(--ouro-claro);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase" href="modelo-4-portal/index.html">Abrir Modelo 4 →</a>
+          </div>
+        </article>
+
+        <article class="modelo" style="grid-column:1/-1">
+          <div class="topo">
+            <span class="n">5</span>
+            <div><h3>Cerimonial</h3><span>Imersivo · cinematográfico</span></div>
+          </div>
+          <div class="preview" style="aspect-ratio:1440/900">
+            <iframe src="modelo-5-cerimonial/index.html" title="Prévia do Modelo 5 — Cerimonial" loading="lazy" scrolling="no" style="height:900px"></iframe>
+            <span class="aviso">Prévia · clique no título para abrir</span>
+          </div>
+          <div class="corpo" style="max-width:none">
+            <p class="desc">
+              A página como uma cerimônia: capa em tela cheia com o emblema pulsando, seguida de capítulos
+              numerados em algarismos romanos (I · A Casa, II · Tradição, III · Comunidade, IV · Calendário,
+              V · Acervo, VI · Contribuir) e navegação lateral por capítulos. Pouca informação por tela,
+              muito respiro, deslocamento lento e solene.
+            </p>
+            <dl style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+              <dt>Ideal para</dt>
+              <dd>Quem quer que a primeira impressão do site seja uma experiência, não um menu. Excelente para apresentação em telão e para vídeos institucionais.</dd>
+              <dt>Destaque</dt>
+              <dd>Capítulos numerados com navegação lateral fixa e convite de rolagem — o visitante é conduzido, não largado.</dd>
+              <dt>Atenção</dt>
+              <dd>É o modelo menos eficiente para quem chega buscando informação prática (agenda, pagamento, endereço) — combina bem como capa sobre outra estrutura.</dd>
+            </dl>
+            <div class="quando">
+              <span class="pill pill--on">Imersivo</span><span class="pill pill--on">Dark</span>
+              <span class="pill">Máximo impacto</span><span class="pill">Menor densidade de informação</span>
+            </div>
+            <a class="btn" style="display:inline-block;text-align:center;padding:.8rem 1.2rem;border:1px solid var(--bronze);color:var(--ouro-claro);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;align-self:flex-start" href="modelo-5-cerimonial/index.html">Abrir Modelo 5 →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="paleta">
+    <div class="wrap">
+      <div class="cabeca">
+        <span class="kicker">Identidade visual</span>
+        <h2>Paleta extraída da logo</h2>
+        <p>
+          As 68.085 amostras de pixel do emblema foram quantizadas por matiz, saturação e luminosidade.
+          O resultado é uma paleta de cinco famílias — todas as cores abaixo existem de fato na logo.
+        </p>
+      </div>
+
+      <div class="paleta">
+        <div class="cor"><div class="amostra" style="background:#0B0806"></div><div class="dados"><b>Preto ritual</b><code>#0B0806</code><span>Fundo profundo. Base das páginas escuras.</span></div></div>
+        <div class="cor"><div class="amostra" style="background:#241A12"></div><div class="dados"><b>Terra sombra</b><code>#241A12</code><span>34% da logo. Planos de fundo secundários.</span></div></div>
+        <div class="cor"><div class="amostra" style="background:#5A4230"></div><div class="dados"><b>Marrom terra</b><code>#5A4230</code><span>48,8% da logo — a família dominante.</span></div></div>
+        <div class="cor"><div class="amostra" style="background:#9C7A45"></div><div class="dados"><b>Bronze</b><code>#9C7A45</code><span>Molduras, filetes, bordas e selos.</span></div></div>
+        <div class="cor"><div class="amostra" style="background:#C9A45C"></div><div class="dados"><b>Ouro</b><code>#C9A45C</code><span>Letras do emblema. Cor de destaque principal.</span></div></div>
+        <div class="cor"><div class="amostra" style="background:#E8CE9A"></div><div class="dados"><b>Ouro claro</b><code>#E8CE9A</code><span>Realces, títulos sobre fundo escuro, hover.</span></div></div>
+        <div class="cor"><div class="amostra" style="background:#4A6340"></div><div class="dados"><b>Verde jurema</b><code>#4A6340</code><span>8,4% da logo — as folhas do emblema.</span></div></div>
+        <div class="cor"><div class="amostra" style="background:#2B3D26"></div><div class="dados"><b>Verde profundo</b><code>#2B3D26</code><span>Blocos institucionais, rodapé, cabeçalhos.</span></div></div>
+        <div class="cor"><div class="amostra" style="background:#7A9668"></div><div class="dados"><b>Verde claro</b><code>#7A9668</code><span>Acentos sobre fundo claro, ícones, chips.</span></div></div>
+        <div class="cor"><div class="amostra" style="background:#E2D3B8"></div><div class="dados"><b>Areia</b><code>#E2D3B8</code><span>Texto principal sobre fundo escuro.</span></div></div>
+        <div class="cor"><div class="amostra" style="background:#F2E7D5"></div><div class="dados"><b>Areia clara</b><code>#F2E7D5</code><span>Títulos e superfícies claras.</span></div></div>
+        <div class="cor"><div class="amostra" style="background:#FFFFFF"></div><div class="dados"><b>Branco papel</b><code>#FFFFFF</code><span>Cartões e superfícies dos modelos claros.</span></div></div>
+      </div>
+
+      <div class="familias">
+        <div class="familia"><span class="pct">48,8%</span><h3>Marrom terra</h3><p>Família dominante. Dá o peso terroso que impede a paleta de virar “dourado genérico”.</p></div>
+        <div class="familia"><span class="pct">34,1%</span><h3>Sombra</h3><p>Preta e terrosa. Sustenta os modelos escuros (1 e 5) sem estourar o contraste.</p></div>
+        <div class="familia"><span class="pct">8,4%</span><h3>Verde folha</h3><p>As folhas do emblema. É o contraponto frio do ouro e o que dá identidade à Jurema.</p></div>
+        <div class="familia"><span class="pct">5,8%</span><h3>Areia / creme</h3><p>Realces e textos. Permite versões claras sem perder o vínculo com a logo.</p></div>
+        <div class="familia"><span class="pct">2,5%</span><h3>Ouro / bronze</h3><p>Usado com parcimônia — como na própria logo. É acento, nunca área grande.</p></div>
+      </div>
+
+      <div class="nota" style="max-width:none;margin-top:1.6rem">
+        <b>Regra de uso aplicada em todos os modelos:</b> o ouro ocupa menos de 10% da área visível
+        (filetes, títulos, ícones e botões), o verde assume os blocos institucionais e o marrom/areia faz o
+        trabalho pesado. Isso mantém a fidelidade à logo, que também é predominantemente terrosa com
+        ouro apenas nas letras e na moldura.
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec--alt" id="comparativo">
+    <div class="wrap">
+      <div class="cabeca">
+        <span class="kicker">Comparativo</span>
+        <h2>Qual modelo resolve o quê</h2>
+      </div>
+      <div class="tabela-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Critério</th>
+              <th>1 · Altar</th>
+              <th>2 · Jurema Viva</th>
+              <th>3 · Editorial</th>
+              <th>4 · Portal</th>
+              <th>5 · Cerimonial</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th>Tom</th><td>Solene, tradicional</td><td>Acolhedor, próximo</td><td>Cultural, informativo</td><td>Prático, direto</td><td>Cerimonial, imersivo</td></tr>
+            <tr><th>Fundo</th><td>Escuro terroso</td><td>Claro pergaminho</td><td>Claro papel</td><td>Claro neutro</td><td>Escuro profundo</td></tr>
+            <tr><th>Logo em destaque</th><td class="sim">Máximo</td><td class="sim">Alto</td><td>Médio</td><td>Médio</td><td class="sim">Máximo</td></tr>
+            <tr><th>Densidade de informação</th><td>Média</td><td>Média</td><td class="sim">Alta</td><td class="sim">Alta</td><td class="nao">Baixa</td></tr>
+            <tr><th>Antecipa a Área de Membros</th><td>Sim (bloco)</td><td>Sim (bloco)</td><td>Sim (bloco)</td><td class="sim">Sim (painel detalhado)</td><td>Sim (bloco)</td></tr>
+            <tr><th>Espaço para comunicados</th><td>3 cards</td><td>3 cards + destaque</td><td class="sim">Colunas de jornal</td><td>3 módulos</td><td>Capítulo próprio</td></tr>
+            <tr><th>Formulário de contato</th><td class="nao">Não</td><td class="sim">Completo, com triagem</td><td class="nao">Não</td><td class="nao">Não</td><td>Não</td></tr>
+            <tr><th>Bloco de transparência/LGPD</th><td>Rodapé</td><td>Rodapé</td><td>Rodapé</td><td class="sim">Seção própria</td><td>Rodapé</td></tr>
+            <tr><th>Sensação em telão / evento</th><td>Boa</td><td>Média</td><td>Média</td><td>Média</td><td class="sim">Excelente</td></tr>
+            <tr><th>Custo de manutenção do conteúdo</th><td>Baixo</td><td>Baixo</td><td class="nao">Alto (exige redação)</td><td>Médio</td><td>Baixo</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="checklist">
+    <div class="wrap">
+      <div class="cabeca">
+        <span class="kicker">Próximos passos</span>
+        <h2>O que ainda depende da Direção</h2>
+        <p>Nada aqui foi inventado a partir de fontes externas: os textos são de exemplo e precisam ser substituídos.</p>
+      </div>
+
+      <div class="cols">
+        <div class="bloco">
+          <h3>Conteúdo que precisa ser fornecido</h3>
+          <ol>
+            <li><b>História e apresentação da Tenda</b> — texto oficial, fundação, trajetória (RF-002).</li>
+            <li><b>Missão e valores</b> — redação aprovada pela Direção.</li>
+            <li><b>Endereço completo</b> da sede e ponto de referência (RF-006).</li>
+            <li><b>Telefone, e-mail e redes oficiais</b> (RF-006, RF-015).</li>
+            <li><b>Agenda real de eventos</b> — data, horário, local e descrição (RF-003).</li>
+            <li><b>Fotos e vídeos autorizados</b> — com a classificação de acesso de cada mídia (RF-005, RF-013).</li>
+            <li><b>Dados para doação</b> — Pix, conta bancária ou outra via (RF-007).</li>
+            <li><b>Logo em alta resolução</b> — a imagem disponível tem apenas 640×640 px; para impressão e telas grandes é preciso o arquivo original (idealmente vetorial).</li>
+            <li><b>Documentos institucionais</b> — estatuto, atas, política de privacidade (RF-017).</li>
+          </ol>
+        </div>
+
+        <div class="bloco">
+          <h3>Decisões de requisitos que os modelos levantam</h3>
+          <ol>
+            <li><b>Modelo escolhido</b> (ou combinação de seções) e justificativa da Direção.</li>
+            <li><b>Quem publica o quê</b> — quais funções terão permissão de criar, editar e publicar conteúdo (RF-010 a RF-013).</li>
+            <li><b>Fluxo de rascunho → publicado</b> — o modelo precisa de estados visíveis na administração (RF-014).</li>
+            <li><b>Classificação dos conteúdos restritos</b> — item 9 dos pontos pendentes da especificação. Os modelos já separam “público” de “restrito”, mas falta definir as categorias.</li>
+            <li><b>Política de privacidade e LGPD</b> — o rodapé de todos os modelos já reserva o link; falta o texto (RNF-004).</li>
+            <li><b>Prestação de contas pública</b> — a Direção quer publicar relatórios no site ou apenas na área de membros?</li>
+            <li><b>Formulário de contato</b> — haverá envio real por e-mail? Quem recebe? Precisa de proteção anti-spam?</li>
+            <li><b>Indexação nos buscadores</b> — confirmar que o site público deve ser indexável (RNF-011) e que a área de membros não.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="nota" style="max-width:none;margin-top:1.6rem">
+        <b>Observação técnica:</b> os cinco modelos são HTML e CSS puros, sem dependências de framework e sem
+        back-end. Servem para validação visual e de conteúdo — não são a implementação final. Ao fechar a etapa
+        institucional, o modelo aprovado vira o layout de referência para a camada pública da plataforma,
+        reaproveitando a paleta e os componentes já definidos aqui.
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    Tenda de Jurema Reis Malunguinho · Protótipos institucionais · 2026 —
+    Documento base: <em>Especificação de Requisitos v0.1</em>
+  </div>
+</footer>
+
+<script>
+/* Ajusta a escala das prévias para caber no cartão */
+function escalar(){
+  document.querySelectorAll('.preview').forEach(function(p){
+    var f = p.querySelector('iframe');
+    if(!f) return;
+    var largura = f.offsetWidth || 1440;          // largura de projeto
+    var s = p.clientWidth / largura;
+    f.style.transform = 'scale(' + s + ')';
+  });
+}
+window.addEventListener('load', escalar);
+window.addEventListener('resize', escalar);
+escalar();
+</script>
+
+</body>
+</html>

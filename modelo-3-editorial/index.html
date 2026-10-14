@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modelo 3 · Editorial — Tenda de Jurema Reis Malunguinho</title>
+<meta name="description" content="Protótipo de homepage institucional — Modelo 3 (Editorial) para a Tenda de Jurema Reis Malunguinho.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   MODELO 3 — "EDITORIAL"  ·  Revista / jornal cultural
+   Grid assimétrico, tipografia grande, filetes e colunas
+   ============================================================ */
+:root{
+  --papel:#F4EFE3;
+  --papel-2:#EAE2D1;
+  --tinta:#171310;
+  --tinta-2:#3A322A;
+  --tinta-3:#6E6355;
+  --verde:#2B3D26;
+  --verde-2:#4A6340;
+  --verde-3:#8AA47A;
+  --ouro:#B98F3E;
+  --ouro-2:#E0C078;
+  --bronze:#8A6A34;
+  --linha:rgba(23,19,16,.18);
+  --linha-forte:rgba(23,19,16,.55);
+  --sans:'Archivo',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --serif:'Spectral',Georgia,serif;
+  --max:1280px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--papel);color:var(--tinta);
+  font-family:var(--serif);font-size:17.5px;line-height:1.68;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:var(--sans);margin:0;line-height:1.05;letter-spacing:-.02em}
+.wrap{width:min(100% - 2.5rem,var(--max));margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.label{
+  font-family:var(--sans);font-size:.68rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;
+}
+.rule{height:1px;background:var(--linha-forte);border:0;margin:0}
+
+/* aviso */
+.proto{
+  background:var(--tinta);color:var(--papel-2);text-align:center;padding:.45rem 1rem;
+  font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+}
+.proto strong{color:var(--ouro-2)}
+
+/* ---------- topbar ---------- */
+.topbar{border-bottom:1px solid var(--linha);background:var(--papel-2)}
+.topbar .wrap{display:flex;align-items:center;gap:1rem;padding:.55rem 0;flex-wrap:wrap}
+.topbar span{font-family:var(--sans);font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tinta-3)}
+.topbar .sep{margin-left:auto}
+.topbar a:hover{color:var(--verde-2)}
+.topbar .membros{color:var(--verde);border-bottom:1.5px solid var(--ouro)}
+
+/* ---------- masthead ---------- */
+.masthead{border-bottom:3px double var(--linha-forte);padding:1.4rem 0}
+.masthead .wrap{display:flex;align-items:center;gap:1.6rem;flex-wrap:wrap}
+.masthead img{width:76px;height:76px;border-radius:50%;object-fit:cover;border:1px solid var(--linha-forte)}
+.masthead .nome{flex:1;min-width:280px}
+.masthead h1{
+  font-size:clamp(1.5rem,4.4vw,2.9rem);font-weight:900;text-transform:uppercase;letter-spacing:-.03em;
+}
+.masthead h1 span{color:var(--verde)}
+.masthead p{margin:.35rem 0 0;font-family:var(--sans);font-size:.74rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--tinta-3)}
+.selo{
+  border:2px solid var(--verde);color:var(--verde);padding:.6rem .9rem;text-align:center;
+  font-family:var(--sans);font-size:.62rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;line-height:1.4;
+  transform:rotate(-2deg);
+}
+.selo b{display:block;font-size:1.35rem;letter-spacing:0}
+
+/* ---------- nav ---------- */
+nav{border-bottom:1px solid var(--linha-forte);position:sticky;top:0;z-index:50;background:rgba(244,239,227,.94);backdrop-filter:blur(10px)}
+nav .wrap{display:flex;align-items:center;gap:1.4rem}
+nav ul{display:flex;gap:1.5rem;list-style:none;margin:0;padding:0;flex:1;flex-wrap:wrap}
+nav a{
+  display:block;padding:.95rem 0;font-family:var(--sans);font-size:.76rem;font-weight:800;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--tinta-2);border-bottom:2px solid transparent;transition:all .2s;
+}
+nav a:hover{color:var(--verde);border-bottom-color:var(--ouro)}
+nav .cta{
+  font-family:var(--sans);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  background:var(--verde);color:var(--papel);padding:.7rem 1.2rem;transition:background .2s;
+}
+nav .cta:hover{background:var(--tinta)}
+.burger{display:none;background:none;border:1.5px solid var(--linha-forte);padding:.5rem .6rem;cursor:pointer}
+
+/* ---------- manchete ---------- */
+.manchete{padding:2.6rem 0 3rem}
+.manchete .grid{display:grid;grid-template-columns:1.35fr 1fr;gap:clamp(1.6rem,4vw,3.2rem);align-items:start}
+.chapeu{
+  display:inline-block;background:var(--ouro);color:#241A05;padding:.28rem .7rem;margin-bottom:1.1rem;
+  font-family:var(--sans);font-size:.66rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;
+}
+.manchete h2{
+  font-size:clamp(2.1rem,6vw,4.4rem);font-weight:900;letter-spacing:-.04em;line-height:.98;text-transform:none;
+}
+.manchete h2 em{font-style:normal;color:var(--verde)}
+.stand{
+  font-size:clamp(1.05rem,2vw,1.3rem);font-weight:300;color:var(--tinta-2);margin:1.4rem 0 1.8rem;
+  border-left:3px solid var(--ouro);padding-left:1.2rem;
+}
+.por{display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap;padding-top:1.4rem;border-top:1px solid var(--linha)}
+.por .label{color:var(--tinta-3)}
+.acoes{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.6rem}
+.botao{
+  font-family:var(--sans);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  padding:.85rem 1.4rem;border:2px solid var(--tinta);transition:all .22s;display:inline-block;
+}
+.botao--cheio{background:var(--tinta);color:var(--papel)}
+.botao--cheio:hover{background:var(--verde);border-color:var(--verde)}
+.botao--vazio:hover{background:var(--tinta);color:var(--papel)}
+.foto{position:relative;border:1px solid var(--linha-forte);background:var(--papel-2);padding:.6rem}
+.foto .img{
+  aspect-ratio:1/1;display:grid;place-items:center;
+  background:
+    radial-gradient(circle at 50% 40%,rgba(185,143,62,.28),transparent 62%),
+    linear-gradient(150deg,var(--verde),#101a0e);
+}
+.foto .img img{width:74%;border-radius:50%;box-shadow:0 20px 50px -20px rgba(0,0,0,.8)}
+.foto figcaption{
+  font-family:var(--sans);font-size:.7rem;color:var(--tinta-3);padding:.7rem .2rem .1rem;line-height:1.5;
+}
+.foto figcaption b{color:var(--tinta)}
+
+/* ---------- faixa de dados ---------- */
+.dados{border-block:1px solid var(--linha-forte);background:var(--papel-2)}
+.dados .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.dados div{padding:1.4rem 1.2rem;border-right:1px solid var(--linha)}
+.dados div:last-child{border-right:0}
+.dados b{display:block;font-family:var(--sans);font-size:1.9rem;font-weight:900;color:var(--verde);line-height:1;letter-spacing:-.03em}
+.dados span{display:block;margin-top:.4rem;font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tinta-3)}
+
+/* ---------- seções gerais ---------- */
+.sec{padding:3.6rem 0}
+.cabeca{
+  display:flex;align-items:baseline;gap:1rem;border-bottom:2px solid var(--tinta);
+  padding-bottom:.7rem;margin-bottom:2rem;flex-wrap:wrap;
+}
+.cabeca h3{font-size:clamp(1.15rem,2.4vw,1.6rem);font-weight:900;letter-spacing:-.02em;text-transform:uppercase}
+.cabeca .label{color:var(--ouro);margin-left:auto}
+.cabeca--verde{border-bottom-color:var(--verde)}
+
+/* últimas: 3 colunas jornal */
+.ultimas{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.materia{padding:0 1.6rem;border-right:1px solid var(--linha)}
+.materia:first-child{padding-left:0}
+.materia:last-child{border-right:0;padding-right:0}
+.materia .thumb{aspect-ratio:16/10;margin-bottom:1rem;background:linear-gradient(140deg,var(--verde-3),var(--verde));border:1px solid var(--linha)}
+.materia time{font-family:var(--sans);font-size:.68rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ouro)}
+.materia h4{font-size:1.3rem;font-weight:800;margin:.6rem 0 .6rem;letter-spacing:-.02em}
+.materia h4:hover{color:var(--verde)}
+.materia p{margin:0 0 .9rem;font-size:.98rem;color:var(--tinta-2);font-weight:300}
+.materia .mais{font-family:var(--sans);font-size:.74rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--verde);border-bottom:1.5px solid var(--ouro)}
+
+/* agenda editorial em tabela */
+.tabela{border-top:2px solid var(--tinta)}
+.linha{
+  display:grid;grid-template-columns:130px 1fr 180px 130px;gap:1.6rem;align-items:center;
+  padding:1.3rem 0;border-bottom:1px solid var(--linha);transition:background .2s;
+}
+.linha:hover{background:var(--papel-2)}
+.linha .dia{font-family:var(--sans);font-weight:900;letter-spacing:-.02em;line-height:1}
+.linha .dia b{font-size:1.9rem;color:var(--verde)}
+.linha .dia span{display:block;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--tinta-3);margin-top:.2rem}
+.linha h4{font-size:1.16rem;font-weight:800;margin-bottom:.25rem;letter-spacing:-.01em}
+.linha p{margin:0;font-size:.94rem;color:var(--tinta-2);font-weight:300}
+.linha .local{font-family:var(--sans);font-size:.76rem;font-weight:700;color:var(--tinta-3)}
+.pill{
+  font-family:var(--sans);font-size:.66rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+  border:1.5px solid var(--verde);color:var(--verde);padding:.35rem .75rem;text-align:center;display:inline-block;
+}
+.pill--ouro{border-color:var(--ouro);color:var(--bronze)}
+
+/* editorial sobre / duas colunas */
+.colunas{columns:2;column-gap:2.6rem;font-size:1.04rem;color:var(--tinta-2)}
+.colunas p{margin:0 0 1rem;text-align:justify;hyphens:auto}
+.colunas p:first-child::first-letter{
+  float:left;font-family:var(--sans);font-weight:900;font-size:4.2rem;line-height:.8;
+  padding:.15rem .5rem 0 0;color:var(--verde);
+}
+.puxada{
+  break-inside:avoid;border-top:2px solid var(--ouro);border-bottom:2px solid var(--ouro);
+  padding:1.2rem 0;margin:1.6rem 0;font-family:var(--sans);font-size:1.1rem;font-weight:700;
+  line-height:1.45;letter-spacing:-.01em;color:var(--verde);
+}
+
+/* acervo galeria editorial */
+.acervo{display:grid;grid-template-columns:2fr 1fr 1fr;grid-auto-rows:190px;gap:1rem}
+.acervo figure{
+  margin:0;position:relative;overflow:hidden;border:1px solid var(--linha-forte);
+  background:linear-gradient(150deg,var(--papel-2),var(--verde-3));
+}
+.acervo figure:first-child{grid-row:span 2;background:linear-gradient(150deg,var(--verde),#131f11)}
+.acervo figure:last-child{grid-column:span 2}
+.acervo figcaption{
+  position:absolute;left:0;bottom:0;right:0;padding:.7rem .9rem;background:rgba(23,19,16,.82);
+  color:var(--papel);font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+}
+.acervo figure:hover{filter:brightness(1.12)}
+
+/* doações */
+.doar{background:var(--verde);color:var(--papel);padding:3.4rem 0}
+.doar .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
+.doar h3{font-size:clamp(1.5rem,3.6vw,2.3rem);font-weight:900;letter-spacing:-.03em;margin-bottom:1rem}
+.doar p{color:#CBD9C0;font-weight:300;margin:0 0 1.6rem;max-width:52ch}
+.doar .botao{border-color:var(--ouro-2);color:var(--ouro-2)}
+.doar .botao:hover{background:var(--ouro-2);color:var(--verde)}
+.doar .vias{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.doar .vias div{border:1px solid rgba(224,192,120,.4);padding:1.1rem}
+.doar .vias b{display:block;font-family:var(--sans);font-size:.78rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--ouro-2);margin-bottom:.35rem}
+.doar .vias span{font-size:.92rem;color:#CBD9C0;font-weight:300}
+
+/* contato */
+.contato{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.4rem}
+.bloco h4{font-family:var(--sans);font-size:.72rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--ouro);margin-bottom:.9rem}
+.bloco p,.bloco address{font-style:normal;font-size:1rem;color:var(--tinta-2);margin:0 0 .8rem;font-weight:300}
+.bloco .mapa{
+  aspect-ratio:16/11;border:1px solid var(--linha-forte);display:grid;place-items:center;text-align:center;padding:1rem;
+  background:repeating-linear-gradient(0deg,rgba(23,19,16,.1) 0 1px,transparent 1px 30px),repeating-linear-gradient(90deg,rgba(23,19,16,.1) 0 1px,transparent 1px 30px),var(--papel-2);
+  font-family:var(--sans);font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--tinta-3);
+}
+.membro-box{border:2px solid var(--tinta);padding:1.6rem;background:var(--papel-2)}
+.membro-box h4{color:var(--verde);margin-bottom:.7rem}
+.membro-box p{font-size:.96rem}
+.membro-box .botao{margin-top:.6rem;width:100%;text-align:center}
+
+/* footer */
+footer{background:var(--tinta);color:#B8AC9C;padding:3rem 0 1.6rem}
+.fgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:2.2rem}
+footer h4{font-family:var(--sans);font-size:.7rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--ouro-2);margin-bottom:1rem}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.55rem}
+footer a,footer p{font-size:.94rem;margin:0;color:#B8AC9C;font-weight:300}
+footer a:hover{color:var(--ouro-2)}
+.fbrand{display:flex;gap:1rem;align-items:center;margin-bottom:1rem}
+.fbrand img{width:56px;height:56px;border-radius:50%;border:1px solid rgba(224,192,120,.5)}
+.fbrand b{font-family:var(--sans);font-size:.86rem;font-weight:900;letter-spacing:.06em;color:var(--papel);text-transform:uppercase;line-height:1.3}
+.fbottom{
+  margin-top:2.4rem;padding-top:1.3rem;border-top:1px solid rgba(224,192,120,.2);
+  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  font-family:var(--sans);font-size:.7rem;font-weight:600;letter-spacing:.08em;
+}
+
+/* responsivo */
+@media (max-width:1000px){
+  .manchete .grid{grid-template-columns:1fr}
+  .ultimas{grid-template-columns:1fr}
+  .materia{padding:0 0 1.6rem;border-right:0;border-bottom:1px solid var(--linha);margin-bottom:1.6rem}
+  .materia:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+  .colunas{columns:1}
+  .doar .wrap{grid-template-columns:1fr}
+  .contato{grid-template-columns:1fr 1fr}
+  .dados .wrap{grid-template-columns:1fr 1fr}
+  .dados div:nth-child(2){border-right:0}
+  .dados div:nth-child(1),.dados div:nth-child(2){border-bottom:1px solid var(--linha)}
+  .acervo{grid-template-columns:1fr 1fr;grid-auto-rows:150px}
+  .acervo figure:first-child{grid-row:span 1}
+  .fgrid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:700px){
+  nav ul{display:none}
+  nav ul.aberto{display:flex;flex-direction:column;gap:0;position:absolute;top:100%;left:0;right:0;
+    background:var(--papel);border-bottom:1px solid var(--linha-forte);padding:.4rem 1.25rem 1rem}
+  nav .wrap{position:relative}
+  #nav:checked ~ ul{display:flex;flex-direction:column;gap:0;position:absolute;top:100%;left:0;right:0;
+    background:var(--papel);border-bottom:2px solid var(--linha-forte);padding:.4rem 1.25rem 1rem}
+  .burger{display:block;order:3}
+  .linha{grid-template-columns:1fr;gap:.6rem}
+  .linha .dia b{font-size:1.5rem}
+  .contato{grid-template-columns:1fr}
+  .doar .vias{grid-template-columns:1fr}
+  .fgrid{grid-template-columns:1fr}
+  .acervo{grid-template-columns:1fr}
+  .acervo figure:last-child{grid-column:span 1}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="proto">Protótipo <strong>Modelo 3 · Editorial</strong> — conteúdo de exemplo para validação da Direção</div>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>Araguaína / Tocantins</span>
+    <span>·</span>
+    <span>Outubro de 2026</span>
+    <span class="sep"></span>
+    <a href="#doacoes" class="label">Doações</a>
+    <a href="#contato" class="label">Contato</a>
+    <a href="#membros" class="label membros">Área de Membros</a>
+  </div>
+</div>
+
+<div class="masthead">
+  <div class="wrap">
+    <img src="../assets/logo.jpg" alt="Emblema da Tenda de Jurema Reis Malunguinho">
+    <div class="nome">
+      <h1>Tenda de Jurema <span>Reis Malunguinho</span></h1>
+      <p>Jurema Sagrada · Fé, memória e comunidade</p>
+    </div>
+    <div class="selo">Desde<b>2017</b>Araguaína/TO</div>
+  </div>
+</div>
+
+<nav>
+  <div class="wrap">
+    <input type="checkbox" id="nav" class="sr">
+    <label class="burger" for="nav" aria-label="Abrir menu">
+      <svg width="20" height="14" viewBox="0 0 20 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M0 1h20M0 7h20M0 13h20"/></svg>
+    </label>
+    <ul>
+      <li><a href="#tenda">A Tenda</a></li>
+      <li><a href="#agenda">Agenda</a></li>
+      <li><a href="#noticias">Comunicados</a></li>
+      <li><a href="#acervo">Acervo</a></li>
+      <li><a href="#doacoes">Doações</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <a class="cta" href="#membros">Entrar</a>
+  </div>
+</nav>
+
+<main>
+
+  <!-- MANCHETE -->
+  <section class="manchete">
+    <div class="wrap grid">
+      <div>
+        <span class="chapeu">Institucional · Edição de abertura</span>
+        <h2>Uma casa de <em>Jurema Sagrada</em> que se organiza como comunidade</h2>
+        <p class="stand">
+          A Tenda de Jurema Reis Malunguinho reúne, desde 2017, uma comunidade que cultiva a tradição,
+          cuida das pessoas e presta contas do que recebe. Este site é a porta de entrada pública dessa casa.
+        </p>
+        <div class="por">
+          <span class="label">Por Direção da Tenda</span>
+          <span class="label" style="color:var(--tinta-3)">Araguaína / TO</span>
+        </div>
+        <div class="acoes">
+          <a class="botao botao--cheio" href="#tenda">Conheça a Tenda</a>
+          <a class="botao botao--vazio" href="#agenda">Agenda pública</a>
+        </div>
+      </div>
+      <figure class="foto">
+        <div class="img"><img src="../assets/logo.jpg" alt="Emblema da Tenda de Jurema Reis Malunguinho"></div>
+        <figcaption><b>Emblema oficial.</b> A Jurema e o Malunguinho sob a coroa de folhas — símbolo da casa desde a fundação.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="dados">
+    <div class="wrap">
+      <div><b>2017</b><span>Fundação da Tenda</span></div>
+      <div><b>12</b><span>Competências de cota por ano</span></div>
+      <div><b>04</b><span>Grupos de acesso</span></div>
+      <div><b>CNPJ</b><span>Entidade formalizada</span></div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="sec" id="tenda">
+    <div class="wrap">
+      <div class="cabeca cabeca--verde">
+        <h3>A Tenda</h3>
+        <span class="label">História, missão e comunidade</span>
+      </div>
+      <div class="colunas">
+        <p>
+          A Tenda de Jurema Reis Malunguinho é uma entidade religiosa dedicada à Jurema Sagrada,
+          formalizada com CNPJ e conduzida por uma Direção eleita pela própria comunidade.
+          Nasceu em 2017 do encontro de famílias e irmãos de fé que decidiram manter viva,
+          em Araguaína, uma tradição de cuidado, escuta e respeito.
+        </p>
+        <p>
+          Nossa atuação une a prática espiritual à responsabilidade administrativa. Mantemos estatuto,
+          calendário anual, cotas mensais e prestação de contas, para que a casa cresça com transparência
+          e possa amparar quem dela precisa.
+        </p>
+        <blockquote class="puxada">“A força da Tenda está na comunidade que a sustenta.”</blockquote>
+        <p>
+          Parte das nossas atividades é pública e aberta a visitantes. Outra parte é restrita aos membros,
+          conforme as regras de acesso definidas pela Direção — especialmente os conteúdos religiosos,
+          os documentos internos e as informações financeiras individuais.
+        </p>
+        <p>
+          Acreditamos que uma casa de fé também precisa ser uma casa organizada: registros claros,
+          auditoria das decisões relevantes e respeito à privacidade de cada pessoa.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMUNICADOS -->
+  <section class="sec" id="noticias" style="padding-top:0">
+    <div class="wrap">
+      <div class="cabeca">
+        <h3>Últimas da Tenda</h3>
+        <span class="label">Comunicados oficiais</span>
+      </div>
+      <div class="ultimas">
+        <article class="materia">
+          <div class="thumb"></div>
+          <time datetime="2026-10-10">10 de outubro de 2026</time>
+          <h4>Calendário anual de cotas é aprovado em assembleia</h4>
+          <p>A Direção divulga as doze competências mensais, com valores e datas de vencimento definidos junto à comunidade.</p>
+          <a class="mais" href="#">Ler comunicado</a>
+        </article>
+        <article class="materia">
+          <div class="thumb"></div>
+          <time datetime="2026-09-22">22 de setembro de 2026</time>
+          <h4>Campanha do bem comum arrecada fundos para a sede</h4>
+          <p>Ação voltada à manutenção do espaço e ao apoio a membros em situação de dificuldade temporária.</p>
+          <a class="mais" href="#">Ler comunicado</a>
+        </article>
+        <article class="materia">
+          <div class="thumb"></div>
+          <time datetime="2026-08-30">30 de agosto de 2026</time>
+          <h4>Plataforma da Tenda entra em fase de projeto</h4>
+          <p>Nova área de membros trará consulta de cotas, pagamentos e conteúdos restritos com acesso individual.</p>
+          <a class="mais" href="#">Ler comunicado</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENDA -->
+  <section class="sec" id="agenda" style="background:var(--papel-2);border-block:1px solid var(--linha-forte)">
+    <div class="wrap">
+      <div class="cabeca cabeca--verde">
+        <h3>Agenda pública</h3>
+        <span class="label">Aberto a visitantes</span>
+      </div>
+      <div class="tabela">
+        <div class="linha">
+          <div class="dia"><b>14</b><span>Nov · Sábado</span></div>
+          <div><h4>Encontro de Jurema e Memória</h4><p>Roda de conversa sobre a história da casa e apresentação do calendário anual.</p></div>
+          <div class="local">Sede da Tenda · 19h</div>
+          <div><span class="pill">Aberto</span></div>
+        </div>
+        <div class="linha">
+          <div class="dia"><b>28</b><span>Nov · Sábado</span></div>
+          <div><h4>Festa de Reis Malunguinho</h4><p>Celebração anual com a comunidade, convidados e programação cultural.</p></div>
+          <div class="local">Sede da Tenda · 18h</div>
+          <div><span class="pill">Aberto</span></div>
+        </div>
+        <div class="linha">
+          <div class="dia"><b>12</b><span>Dez · Sábado</span></div>
+          <div><h4>Encontro de Estudos — Fundamentos</h4><p>Estudo conduzido pela Direção, com vagas limitadas e inscrição prévia.</p></div>
+          <div class="local">Sede da Tenda · 16h</div>
+          <div><span class="pill pill--ouro">Inscrição</span></div>
+        </div>
+        <div class="linha">
+          <div class="dia"><b>—</b><span>Data a definir</span></div>
+          <div><h4>Assembleia geral ordinária</h4><p>Prestação de contas e deliberações da comunidade. Convocação divulgada com antecedência.</p></div>
+          <div class="local">Sede da Tenda</div>
+          <div><span class="pill pill--ouro">Membros</span></div>
+        </div>
+      </div>
+      <div style="margin-top:1.8rem">
+        <a class="botao botao--vazio" href="#">Ver calendário completo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACERVO -->
+  <section class="sec" id="acervo">
+    <div class="wrap">
+      <div class="cabeca">
+        <h3>Acervo</h3>
+        <span class="label">Imagens e vídeos autorizados</span>
+      </div>
+      <div class="acervo">
+        <figure><figcaption>Fachada da sede</figcaption></figure>
+        <figure><figcaption>Festa anual</figcaption></figure>
+        <figure><figcaption>Encontros de estudo</figcaption></figure>
+        <figure><figcaption>Comunidade em celebração</figcaption></figure>
+        <figure><figcaption>Acervo histórico</figcaption></figure>
+      </div>
+      <p style="margin-top:1.2rem;font-size:.9rem;color:var(--tinta-3);font-family:var(--sans)">
+        Materiais classificados como restritos não são exibidos publicamente e ficam disponíveis apenas na área de membros.
+      </p>
+    </div>
+  </section>
+
+  <!-- DOAÇÕES -->
+  <section class="doar" id="doacoes">
+    <div class="wrap">
+      <div>
+        <span class="label" style="color:var(--ouro-2)">Contribua</span>
+        <h3>Doações e apoio à Tenda</h3>
+        <p>
+          As doações mantêm a sede, os trabalhos e as ações de apoio mútuo. Toda contribuição é registrada
+          e apresentada em prestação de contas à comunidade.
+        </p>
+        <a class="botao" href="#">Ver formas de doar</a>
+      </div>
+      <div class="vias">
+        <div><b>Pix</b><span>Chave a ser divulgada pela Tesouraria</span></div>
+        <div><b>Transferência</b><span>Dados bancários da entidade</span></div>
+        <div><b>Presencial</b><span>Na sede, com emissão de recibo</span></div>
+        <div><b>Nota fiscal</b><span>Destinação de notas à entidade</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="sec" id="contato">
+    <div class="wrap">
+      <div class="cabeca cabeca--verde">
+        <h3>Contato</h3>
+        <span class="label">Fale com a Tenda</span>
+      </div>
+      <div class="contato">
+        <div class="bloco">
+          <h4>Endereço e atendimento</h4>
+          <address>
+            Endereço completo a ser informado pela Direção<br>
+            Araguaína — Tocantins
+          </address>
+          <p>Atendimento presencial mediante agendamento prévio.</p>
+        </div>
+        <div class="bloco">
+          <h4>Canais</h4>
+          <p>contato@tendadejurema.org.br<br><em style="color:var(--tinta-3);font-size:.86rem">(endereço provisório)</em></p>
+          <p>Telefone a definir</p>
+          <h4 style="margin-top:1.4rem">Links oficiais</h4>
+          <p>Redes e canais de comunicação oficial da Tenda.</p>
+        </div>
+        <div>
+          <div class="mapa">Mapa incorporado — endereço pendente</div>
+          <div class="membro-box" id="membros">
+            <h4>Acesso restrito</h4>
+            <p>Área de Membros: cotas, pagamentos, documentos da casa e conteúdos liberados conforme autorização.</p>
+            <a class="botao botao--cheio" href="#">Entrar na Área de Membros</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="fbrand">
+          <img src="../assets/logo.jpg" alt="">
+          <b>Tenda de Jurema<br>Reis Malunguinho</b>
+        </div>
+        <p>Entidade religiosa de Jurema Sagrada, com CNPJ, sediada em Araguaína / Tocantins. Desde 2017.</p>
+      </div>
+      <div>
+        <h4>Navegue</h4>
+        <ul>
+          <li><a href="#tenda">A Tenda</a></li>
+          <li><a href="#agenda">Agenda</a></li>
+          <li><a href="#noticias">Comunicados</a></li>
+          <li><a href="#acervo">Acervo</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Participe</h4>
+        <ul>
+          <li><a href="#doacoes">Doações</a></li>
+          <li><a href="#membros">Área de Membros</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="#">Links oficiais</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Institucional</h4>
+        <ul>
+          <li><a href="#">Estatuto e normas da casa</a></li>
+          <li><a href="#">Política de privacidade (LGPD)</a></li>
+          <li><a href="#">Transparência</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbottom">
+      <span>© 2026 Tenda de Jurema Reis Malunguinho · Todos os direitos reservados</span>
+      <span>Protótipo institucional · Modelo 3 “Editorial” · conteúdo de exemplo</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

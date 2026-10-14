@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modelo 2 · Jurema Viva — Tenda de Jurema Reis Malunguinho</title>
+<meta name="description" content="Protótipo de homepage institucional — Modelo 2 (Jurema Viva) para a Tenda de Jurema Reis Malunguinho.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   MODELO 2 — "JUREMA VIVA"  ·  Orgânico, claro e acolhedor
+   Paleta derivada da logo: areia/pergaminho + verde-folha + ouro
+   ============================================================ */
+:root{
+  --pergaminho:#F7F1E4;
+  --areia:#EFE3CC;
+  --areia-2:#E4D5B8;
+  --creme:#FDFAF3;
+  --verde-900:#1E2B1B;
+  --verde-800:#2B3D26;
+  --verde-700:#3A5133;
+  --verde-600:#4A6340;
+  --verde-400:#7A9668;
+  --verde-200:#B9CBA6;
+  --verde-100:#DCE7CF;
+  --ouro:#B98F3E;
+  --ouro-claro:#D9B564;
+  --ouro-suave:#F0DFB4;
+  --terra:#6B4F35;
+  --terra-suave:#9C8163;
+  --tinta:#241B12;
+  --tinta-suave:#5C4E3E;
+  --branco:#FFFFFF;
+  --r-lg:26px;
+  --r-md:16px;
+  --r-sm:10px;
+  --sombra:0 14px 40px -22px rgba(43,61,38,.45);
+  --display:'Fraunces',Georgia,serif;
+  --sans:'Karla',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --max:1180px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--pergaminho);color:var(--tinta);
+  font-family:var(--sans);font-size:17px;line-height:1.72;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+/* textura sutil de papel */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;
+  background-image:radial-gradient(rgba(107,79,53,.09) 1px,transparent 1px);
+  background-size:22px 22px;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.15;margin:0;letter-spacing:-.01em}
+.wrap{width:min(100% - 2.5rem,var(--max));margin-inline:auto;position:relative;z-index:1}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* ---------- aviso protótipo ---------- */
+.proto{
+  background:var(--verde-800);color:var(--verde-200);text-align:center;
+  font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:.5rem 1rem;position:relative;z-index:60;
+}
+.proto strong{color:var(--ouro-claro)}
+
+/* ---------- header ---------- */
+header{
+  position:sticky;top:0;z-index:50;background:rgba(247,241,228,.9);
+  backdrop-filter:blur(14px);border-bottom:1px solid rgba(107,79,53,.14);
+}
+.nav{display:flex;align-items:center;gap:1.2rem;min-height:80px}
+.brand{display:flex;align-items:center;gap:.8rem;margin-right:auto}
+.brand img{width:52px;height:52px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 3px var(--creme),0 0 0 4px rgba(185,143,62,.45)}
+.brand b{display:block;font-family:var(--display);font-size:1rem;font-weight:600;color:var(--verde-800);line-height:1.1}
+.brand span{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ouro);font-weight:600}
+.menu{display:flex;gap:1.5rem;list-style:none;margin:0;padding:0}
+.menu a{font-size:.92rem;font-weight:500;color:var(--tinta-suave);transition:color .2s}
+.menu a:hover{color:var(--verde-700)}
+.btn{
+  display:inline-flex;align-items:center;gap:.55rem;font-family:var(--sans);font-weight:600;
+  font-size:.93rem;padding:.82rem 1.5rem;border-radius:100px;border:1.6px solid transparent;
+  transition:all .25s;cursor:pointer;white-space:nowrap;
+}
+.btn--primary{background:var(--verde-700);color:var(--creme);box-shadow:var(--sombra)}
+.btn--primary:hover{background:var(--verde-800);transform:translateY(-2px)}
+.btn--gold{background:linear-gradient(135deg,var(--ouro-claro),var(--ouro));color:#2A1F0C}
+.btn--gold:hover{filter:brightness(1.06);transform:translateY(-2px)}
+.btn--line{border-color:var(--verde-400);color:var(--verde-700)}
+.btn--line:hover{background:var(--verde-100);border-color:var(--verde-600)}
+.burger{display:none;background:none;border:1.5px solid rgba(107,79,53,.3);border-radius:10px;color:var(--verde-700);padding:.55rem .65rem;cursor:pointer}
+
+/* ---------- hero split ---------- */
+.hero{position:relative;padding:4.5rem 0 3.5rem;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+.pill{
+  display:inline-flex;align-items:center;gap:.6rem;background:var(--verde-100);color:var(--verde-700);
+  border-radius:100px;padding:.42rem 1rem .42rem .5rem;font-size:.8rem;font-weight:600;
+  letter-spacing:.06em;text-transform:uppercase;margin-bottom:1.6rem;
+}
+.pill i{width:22px;height:22px;border-radius:50%;background:var(--ouro);display:grid;place-items:center;font-style:normal;font-size:.7rem;color:#2A1F0C}
+.hero h1{font-size:clamp(2.1rem,5.2vw,3.6rem);color:var(--verde-900);text-wrap:balance}
+.hero h1 em{
+  font-style:normal;color:var(--ouro);position:relative;white-space:nowrap;
+}
+.hero h1 em::after{
+  content:"";position:absolute;left:0;right:0;bottom:.06em;height:.28em;background:var(--ouro-suave);
+  border-radius:4px;z-index:-1;
+}
+.hero p.lead{font-size:clamp(1.02rem,1.6vw,1.16rem);color:var(--tinta-suave);max-width:50ch;margin:1.4rem 0 2rem}
+.hero-cta{display:flex;gap:.9rem;flex-wrap:wrap;align-items:center}
+.mini{margin-top:2.2rem;display:flex;gap:2rem;flex-wrap:wrap}
+.mini div b{display:block;font-family:var(--display);font-size:1.55rem;color:var(--verde-700);line-height:1}
+.mini div span{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--terra-suave);font-weight:600}
+
+/* emblema em forma orgânica */
+.blob{position:relative;display:grid;place-items:center;aspect-ratio:1}
+.blob .shape{
+  position:absolute;inset:0;
+  background:linear-gradient(150deg,var(--verde-400),var(--verde-700) 55%,var(--verde-900));
+  border-radius:62% 38% 46% 54% / 54% 46% 54% 46%;
+  animation:morph 18s ease-in-out infinite;
+  box-shadow:0 30px 70px -30px rgba(43,61,38,.7);
+}
+.blob .shape2{
+  position:absolute;inset:6%;
+  background:linear-gradient(320deg,var(--ouro-suave),transparent 70%);
+  border-radius:44% 56% 62% 38% / 46% 54% 46% 54%;
+  animation:morph 22s ease-in-out infinite reverse;opacity:.55;
+}
+@keyframes morph{
+  0%,100%{border-radius:62% 38% 46% 54% / 54% 46% 54% 46%}
+  34%{border-radius:44% 56% 60% 40% / 40% 62% 38% 60%}
+  67%{border-radius:56% 44% 38% 62% / 62% 38% 62% 38%}
+}
+.blob img{
+  position:relative;z-index:2;width:66%;border-radius:50%;
+  box-shadow:0 0 0 8px rgba(253,250,243,.55),0 24px 50px -18px rgba(30,43,27,.6);
+}
+.leaf{position:absolute;z-index:3;opacity:.9}
+.leaf--a{width:76px;top:4%;left:2%;rotate:-18deg}
+.leaf--b{width:58px;bottom:8%;right:0;rotate:26deg}
+
+/* ---------- faixa de boas-vindas ---------- */
+.faixa{
+  background:var(--verde-800);color:var(--verde-100);position:relative;z-index:1;overflow:hidden;
+}
+.faixa .wrap{display:flex;align-items:center;gap:1.6rem;padding:1.5rem 0;flex-wrap:wrap;justify-content:center;text-align:center}
+.faixa p{margin:0;font-family:var(--display);font-size:clamp(1rem,2.2vw,1.35rem);color:var(--creme)}
+.faixa svg{width:26px;height:26px;stroke:var(--ouro-claro);fill:none;stroke-width:1.4;flex:none}
+
+/* ---------- seções ---------- */
+.sec{padding:5rem 0;position:relative;z-index:1}
+.sec--areia{background:var(--areia)}
+.sec-head{max-width:60ch;margin-bottom:2.8rem}
+.sec-head.center{margin-inline:auto;text-align:center}
+.kicker{
+  font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--ouro);
+  display:block;margin-bottom:.8rem;
+}
+.sec-head h2{font-size:clamp(1.7rem,3.8vw,2.55rem);color:var(--verde-900)}
+.sec-head p{margin:1rem 0 0;color:var(--tinta-suave)}
+
+/* cards "sobre" */
+.duo{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.card{
+  background:var(--creme);border-radius:var(--r-lg);padding:2rem 1.8rem;
+  border:1px solid rgba(107,79,53,.12);box-shadow:var(--sombra);transition:transform .3s;
+}
+.card:hover{transform:translateY(-6px)}
+.card .ic{
+  width:52px;height:52px;border-radius:16px;background:var(--verde-100);display:grid;place-items:center;margin-bottom:1.2rem;
+}
+.card .ic svg{width:26px;height:26px;stroke:var(--verde-700);fill:none;stroke-width:1.5}
+.card h3{font-size:1.24rem;color:var(--verde-800);margin-bottom:.6rem}
+.card p{margin:0;font-size:.98rem;color:var(--tinta-suave)}
+
+/* agenda em cards */
+.eventos{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.evento{
+  background:var(--creme);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sombra);
+  display:flex;flex-direction:column;border:1px solid rgba(107,79,53,.12);
+}
+.evento .top{
+  background:linear-gradient(140deg,var(--verde-600),var(--verde-800));color:var(--creme);
+  padding:1.5rem 1.6rem;display:flex;align-items:center;gap:1rem;
+}
+.evento .top .d{
+  font-family:var(--display);font-size:2.2rem;line-height:1;font-weight:700;
+}
+.evento .top .m{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--verde-200);font-weight:600}
+.evento .top .h{margin-left:auto;background:rgba(255,255,255,.16);border-radius:100px;padding:.28rem .7rem;font-size:.74rem;font-weight:600}
+.evento .body{padding:1.5rem 1.6rem;display:flex;flex-direction:column;flex:1}
+.evento h3{font-size:1.18rem;color:var(--verde-800);margin-bottom:.6rem}
+.evento p{margin:0 0 1.3rem;font-size:.95rem;color:var(--tinta-suave);flex:1}
+.chip{
+  align-self:flex-start;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--verde-700);background:var(--verde-100);border-radius:100px;padding:.35rem .8rem;
+}
+
+/* notícias */
+.news{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:1.4rem}
+.post{
+  background:var(--creme);border-radius:var(--r-lg);overflow:hidden;border:1px solid rgba(107,79,53,.12);
+  box-shadow:var(--sombra);display:flex;flex-direction:column;
+}
+.post .img{aspect-ratio:16/9;background:linear-gradient(135deg,var(--verde-400),var(--verde-700))}
+.post.destaque .img{aspect-ratio:16/11}
+.post .body{padding:1.5rem 1.6rem;display:flex;flex-direction:column;flex:1}
+.post time{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--ouro)}
+.post h3{font-size:1.16rem;color:var(--verde-800);margin:.6rem 0 .6rem}
+.post.destaque h3{font-size:1.55rem}
+.post p{margin:0 0 1rem;font-size:.95rem;color:var(--tinta-suave);flex:1}
+.link{font-weight:700;font-size:.92rem;color:var(--verde-700)}
+.link::after{content:" →"}
+
+/* números/comunidade */
+.numeros{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;text-align:center}
+.num{background:var(--creme);border-radius:var(--r-lg);padding:2rem 1rem;border:1px solid rgba(107,79,53,.12)}
+.num b{display:block;font-family:var(--display);font-size:2.5rem;color:var(--ouro);line-height:1}
+.num span{display:block;margin-top:.5rem;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--terra-suave)}
+
+/* galeria */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.gal figure{
+  margin:0;aspect-ratio:1;border-radius:var(--r-md);overflow:hidden;position:relative;
+  background:linear-gradient(140deg,var(--verde-200),var(--verde-600));cursor:pointer;
+  transition:transform .35s,box-shadow .35s;
+}
+.gal figure:nth-child(1){grid-column:span 2;grid-row:span 2;aspect-ratio:auto;border-radius:var(--r-lg)}
+.gal figure:hover{transform:scale(1.02);box-shadow:var(--sombra)}
+.gal figcaption{
+  position:absolute;inset:auto 0 0 0;padding:.8rem 1rem;font-size:.76rem;font-weight:600;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--creme);background:linear-gradient(0deg,rgba(30,43,27,.85),transparent);
+}
+
+/* doações */
+.doar{
+  background:linear-gradient(140deg,var(--verde-700),var(--verde-900));
+  border-radius:34px;padding:clamp(2.2rem,5vw,3.6rem);color:var(--verde-100);
+  display:grid;grid-template-columns:1.15fr .85fr;gap:2.5rem;align-items:center;position:relative;overflow:hidden;
+}
+.doar::after{
+  content:"";position:absolute;right:-90px;top:-90px;width:320px;height:320px;border-radius:50%;
+  background:radial-gradient(circle,rgba(217,181,100,.32),transparent 68%);
+}
+.doar h2{font-size:clamp(1.6rem,3.6vw,2.35rem);color:var(--creme);margin-bottom:1rem}
+.doar p{color:var(--verde-200);margin:0 0 1.6rem;max-width:52ch}
+.doar .box{background:rgba(253,250,243,.08);border:1px solid rgba(217,181,100,.35);border-radius:var(--r-lg);padding:1.6rem}
+.doar .box h3{font-size:1rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ouro-claro);margin-bottom:1rem;font-family:var(--sans);font-weight:700}
+.doar .box ul{list-style:none;margin:0;padding:0;display:grid;gap:.75rem}
+.doar .box li{display:flex;gap:.7rem;font-size:.95rem;color:var(--verde-100)}
+.doar .box li svg{width:18px;height:18px;flex:none;margin-top:.3rem;stroke:var(--ouro-claro);fill:none;stroke-width:1.6}
+
+/* contato */
+.contato{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+.campo{margin-bottom:1rem}
+.campo label{display:block;font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--terra-suave);margin-bottom:.4rem}
+.campo input,.campo textarea,.campo select{
+  width:100%;padding:.85rem 1rem;border-radius:var(--r-sm);border:1.5px solid rgba(107,79,53,.22);
+  background:var(--creme);font-family:var(--sans);font-size:.97rem;color:var(--tinta);
+}
+.campo input:focus,.campo textarea:focus,.campo select:focus{outline:2px solid var(--verde-400);outline-offset:1px;border-color:transparent}
+.lista{list-style:none;margin:0 0 1.5rem;padding:0;display:grid;gap:1.1rem}
+.lista li{display:flex;gap:.9rem;font-size:.98rem;color:var(--tinta-suave)}
+.lista svg{width:20px;height:20px;flex:none;margin-top:.28rem;stroke:var(--verde-600);fill:none;stroke-width:1.6}
+.lista b{color:var(--tinta);display:block;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase}
+
+/* área de membros */
+.membros{
+  background:var(--creme);border:2px dashed var(--ouro-claro);border-radius:34px;padding:clamp(2rem,4.5vw,3rem);
+  display:flex;align-items:center;gap:2.5rem;flex-wrap:wrap;justify-content:space-between;
+}
+.membros h2{font-size:clamp(1.4rem,3vw,2rem);color:var(--verde-900);margin-bottom:.6rem}
+.membros p{margin:0;color:var(--tinta-suave);max-width:56ch}
+
+/* footer */
+footer{background:var(--verde-900);color:var(--verde-200);padding:3.5rem 0 2rem;position:relative;z-index:1}
+.fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2.2rem}
+footer h4{font-family:var(--sans);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ouro-claro);margin-bottom:1rem;font-weight:700}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.6rem}
+footer a,footer p{font-size:.94rem;color:var(--verde-200);margin:0}
+footer a:hover{color:var(--ouro-claro)}
+.fbrand{display:flex;gap:1rem;align-items:center;margin-bottom:1rem}
+.fbrand img{width:54px;height:54px;border-radius:50%;box-shadow:0 0 0 3px rgba(217,181,100,.4)}
+.fbrand b{font-family:var(--display);font-size:1rem;color:var(--creme)}
+.fbottom{
+  margin-top:2.6rem;padding-top:1.5rem;border-top:1px solid rgba(185,203,166,.18);
+  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.82rem;color:var(--verde-400);
+}
+
+/* responsivo */
+@media (max-width:980px){
+  .hero .wrap{grid-template-columns:1fr;gap:2.5rem}
+  .blob{max-width:420px;margin-inline:auto}
+  .duo,.eventos,.numeros{grid-template-columns:1fr 1fr}
+  .news{grid-template-columns:1fr}
+  .gal{grid-template-columns:1fr 1fr}
+  .gal figure:nth-child(1){grid-column:span 2;grid-row:span 1}
+  .doar{grid-template-columns:1fr}
+  .contato{grid-template-columns:1fr}
+  .fgrid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:720px){
+  .menu{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;
+    background:var(--pergaminho);border-bottom:1px solid rgba(107,79,53,.16);padding:.4rem 0}
+  .menu a{display:block;padding:.95rem 1.3rem;border-bottom:1px solid rgba(107,79,53,.1)}
+  #nav:checked ~ .menu{display:flex}
+  .burger{display:block}
+  .nav .btn{display:none}
+  .duo,.eventos,.numeros,.gal{grid-template-columns:1fr}
+  .gal figure:nth-child(1){grid-column:span 1}
+  .fgrid{grid-template-columns:1fr}
+  .sec{padding:3.5rem 0}
+  .membros{flex-direction:column;align-items:flex-start}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="proto">Protótipo <strong>Modelo 2 · Jurema Viva</strong> — conteúdo de exemplo para validação da Direção</div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <img src="../assets/logo.jpg" alt="Emblema da Tenda de Jurema Reis Malunguinho">
+      <span><b>Tenda de Jurema</b><span>Reis Malunguinho</span></span>
+    </a>
+    <input type="checkbox" id="nav" class="sr">
+    <label class="burger" for="nav" aria-label="Abrir menu">
+      <svg width="20" height="14" viewBox="0 0 20 14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M0 1h20M0 7h20M0 13h20"/></svg>
+    </label>
+    <ul class="menu">
+      <li><a href="#tenda">A Tenda</a></li>
+      <li><a href="#agenda">Agenda</a></li>
+      <li><a href="#noticias">Notícias</a></li>
+      <li><a href="#galeria">Galeria</a></li>
+      <li><a href="#doacoes">Doações</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <a class="btn btn--primary" href="#membros">Área de Membros</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="pill"><i>✦</i> Jurema Sagrada · Araguaína / TO</span>
+        <h1>Uma casa de fé que <em>acolhe</em> e caminha junto</h1>
+        <p class="lead">
+          A Tenda de Jurema Reis Malunguinho reúne uma comunidade que cultiva a tradição,
+          cuida das pessoas e mantém viva a memória da Jurema Sagrada desde 2017.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn--primary" href="#tenda">Conheça a Tenda</a>
+          <a class="btn btn--line" href="#agenda">Ver agenda pública</a>
+        </div>
+        <div class="mini">
+          <div><b>2017</b><span>Desde</span></div>
+          <div><b>12</b><span>Meses de cota</span></div>
+          <div><b>4</b><span>Grupos de acesso</span></div>
+          <div><b>CNPJ</b><span>Entidade formalizada</span></div>
+        </div>
+      </div>
+      <div class="blob">
+        <div class="shape"></div>
+        <div class="shape2"></div>
+        <img src="../assets/logo.jpg" alt="Emblema da Tenda de Jurema Reis Malunguinho">
+        <svg class="leaf leaf--a" viewBox="0 0 64 64" aria-hidden="true"><path d="M54 10C30 10 12 22 10 44c-1 8 3 12 10 12C42 56 54 38 54 10z" fill="#7A9668" opacity=".85"/><path d="M10 54C22 42 34 28 52 12" stroke="#DCE7CF" stroke-width="2" fill="none"/></svg>
+        <svg class="leaf leaf--b" viewBox="0 0 64 64" aria-hidden="true"><path d="M54 10C30 10 12 22 10 44c-1 8 3 12 10 12C42 56 54 38 54 10z" fill="#B98F3E" opacity=".8"/><path d="M10 54C22 42 34 28 52 12" stroke="#F7F1E4" stroke-width="2" fill="none"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="faixa">
+    <div class="wrap">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.6 6.3L21 12l-6.4 2.7L12 21l-2.6-6.3L3 12l6.4-2.7L12 3z"/></svg>
+      <p>“A força da Tenda está na comunidade que a sustenta.”</p>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.6 6.3L21 12l-6.4 2.7L12 21l-2.6-6.3L3 12l6.4-2.7L12 3z"/></svg>
+    </div>
+  </section>
+
+  <section class="sec" id="tenda">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="kicker">Quem somos</span>
+        <h2>Tradição, cuidado e responsabilidade</h2>
+        <p>Somos uma entidade religiosa de Jurema Sagrada, organizada com CNPJ e conduzida por uma Direção eleita pela própria comunidade.</p>
+      </div>
+      <div class="duo">
+        <article class="card">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 21c-5 0-8-3.4-8-7.6C4 8 8 4 12 3c4 1 8 5 8 10.4C20 17.6 17 21 12 21z"/><path d="M12 3v18"/></svg></div>
+          <h3>Nossa história</h3>
+          <p>Fundada em 2017, a Tenda nasceu do encontro de famílias e irmãos de fé que decidiram manter viva a tradição da Jurema em Araguaína.</p>
+        </article>
+        <article class="card">
+          <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></div>
+          <h3>Nossa missão</h3>
+          <p>Cultuar, estudar e transmitir os fundamentos da Jurema Sagrada, com respeito às pessoas, à memória e às normas da casa.</p>
+        </article>
+        <article class="card">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 20V8l8-5 8 5v12"/><path d="M9 20v-6h6v6"/></svg></div>
+          <h3>Nossa organização</h3>
+          <p>Mantemos estatuto, cotas mensais, prestação de contas e registros auditáveis, para que a casa cresça com transparência.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec--areia" id="agenda">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="kicker">Agenda pública</span>
+        <h2>Próximos encontros abertos</h2>
+        <p>Atividades abertas à comunidade e aos visitantes. Os trabalhos restritos ficam disponíveis apenas na área de membros.</p>
+      </div>
+      <div class="eventos">
+        <article class="evento">
+          <div class="top"><span class="d">14</span><span class="m">Nov<br>Sábado</span><span class="h">19h</span></div>
+          <div class="body">
+            <h3>Encontro de Jurema e Memória</h3>
+            <p>Roda de conversa sobre a história da casa, seguida da apresentação do calendário anual da Tenda.</p>
+            <span class="chip">Aberto ao público</span>
+          </div>
+        </article>
+        <article class="evento">
+          <div class="top"><span class="d">28</span><span class="m">Nov<br>Sábado</span><span class="h">18h</span></div>
+          <div class="body">
+            <h3>Festa de Reis Malunguinho</h3>
+            <p>Celebração anual da Tenda, com participação da comunidade, convidados e programação cultural.</p>
+            <span class="chip">Aberto ao público</span>
+          </div>
+        </article>
+        <article class="evento">
+          <div class="top"><span class="d">12</span><span class="m">Dez<br>Sábado</span><span class="h">16h</span></div>
+          <div class="body">
+            <h3>Encontro de Estudos — Fundamentos</h3>
+            <p>Estudo conduzido pela Direção, com vagas limitadas e inscrição prévia pelo formulário de contato.</p>
+            <span class="chip">Inscrição prévia</span>
+          </div>
+        </article>
+      </div>
+      <div style="text-align:center;margin-top:2.2rem">
+        <a class="btn btn--line" href="#">Ver calendário completo</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="noticias">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Comunicados</span>
+        <h2>Notícias da Tenda</h2>
+      </div>
+      <div class="news">
+        <article class="post destaque">
+          <div class="img"></div>
+          <div class="body">
+            <time datetime="2026-10-10">10 de outubro de 2026</time>
+            <h3>Calendário anual de cotas é aprovado em assembleia</h3>
+            <p>A Direção divulga o calendário das doze competências mensais, com valores e datas de vencimento definidos junto à comunidade.</p>
+            <a class="link" href="#">Ler comunicado</a>
+          </div>
+        </article>
+        <article class="post">
+          <div class="img"></div>
+          <div class="body">
+            <time datetime="2026-09-22">22 de setembro</time>
+            <h3>Campanha do bem comum</h3>
+            <p>Ação de arrecadação para manutenção da sede e apoio a membros em dificuldade.</p>
+            <a class="link" href="#">Ler</a>
+          </div>
+        </article>
+        <article class="post">
+          <div class="img"></div>
+          <div class="body">
+            <time datetime="2026-08-30">30 de agosto</time>
+            <h3>Área de membros em preparação</h3>
+            <p>Nova plataforma trará consulta de cotas, pagamentos e conteúdos restritos.</p>
+            <a class="link" href="#">Ler</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec--areia">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="kicker">Nossa comunidade</span>
+        <h2>Uma casa organizada, uma família reunida</h2>
+      </div>
+      <div class="numeros">
+        <div class="num"><b>2017</b><span>Ano de fundação</span></div>
+        <div class="num"><b>12</b><span>Competências por ano</span></div>
+        <div class="num"><b>100%</b><span>Prestação de contas</span></div>
+        <div class="num"><b>4</b><span>Grupos de acesso</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="galeria">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="kicker">Acervo</span>
+        <h2>Galeria</h2>
+        <p>Imagens e vídeos autorizados pela Direção, respeitando a classificação de acesso de cada material.</p>
+      </div>
+      <div class="gal">
+        <figure><figcaption>Fachada da sede</figcaption></figure>
+        <figure><figcaption>Festa anual</figcaption></figure>
+        <figure><figcaption>Estudos</figcaption></figure>
+        <figure><figcaption>Comunidade</figcaption></figure>
+        <figure><figcaption>Acervo</figcaption></figure>
+        <figure><figcaption>Encontros</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec--areia" id="doacoes">
+    <div class="wrap">
+      <div class="doar">
+        <div>
+          <span class="kicker" style="color:var(--ouro-claro)">Contribua</span>
+          <h2>Doações e apoio à Tenda</h2>
+          <p>As doações mantêm a sede, os trabalhos e as ações de apoio mútuo entre os membros. Toda contribuição é registrada e apresentada em prestação de contas.</p>
+          <a class="btn btn--gold" href="#">Ver formas de doar</a>
+        </div>
+        <div class="box">
+          <h3>Como contribuir</h3>
+          <ul>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span>Pix — chave a ser divulgada pela Tesouraria</span></li>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span>Transferência — dados bancários da entidade</span></li>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span>Presencial — na sede, com emissão de recibo</span></li>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span>Nota fiscal — destinação de notas à entidade</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="membros">
+    <div class="wrap">
+      <div class="membros">
+        <div>
+          <span class="kicker">Acesso restrito</span>
+          <h2>Área de Membros</h2>
+          <p>Consulte suas cotas mensais, pagamentos e pendências, e acesse os documentos e conteúdos liberados para a sua categoria.</p>
+        </div>
+        <a class="btn btn--primary" href="#">Entrar na Área de Membros</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec--areia" id="contato">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Fale com a Tenda</span>
+        <h2>Contato e localização</h2>
+      </div>
+      <div class="contato">
+        <div>
+          <ul class="lista">
+            <li><svg viewBox="0 0 24 24"><path d="M12 21s-7-5.2-7-11a7 7 0 1 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg><span><b>Endereço</b>Endereço completo a informar — Araguaína / TO</span></li>
+            <li><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg><span><b>E-mail</b>contato@tendadejurema.org.br (provisório)</span></li>
+            <li><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.4 1.5a12 12 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z"/></svg><span><b>Telefone</b>A definir pela Direção</span></li>
+            <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></svg><span><b>Atendimento</b>Presencial mediante agendamento</span></li>
+          </ul>
+          <div style="aspect-ratio:16/10;border-radius:var(--r-lg);overflow:hidden;display:grid;place-items:center;background:repeating-linear-gradient(0deg,rgba(107,79,53,.12) 0 1px,transparent 1px 32px),repeating-linear-gradient(90deg,rgba(107,79,53,.12) 0 1px,transparent 1px 32px),var(--verde-100);color:var(--terra-suave);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;text-align:center;padding:1rem">
+            Mapa incorporado — endereço pendente
+          </div>
+        </div>
+        <form onsubmit="return false">
+          <h3 style="font-size:1.3rem;color:var(--verde-900);margin-bottom:1.2rem">Envie uma mensagem</h3>
+          <div class="campo"><label for="c1">Nome completo</label><input id="c1" type="text" placeholder="Como podemos chamar você?"></div>
+          <div class="campo"><label for="c2">E-mail</label><input id="c2" type="email" placeholder="seu@email.com"></div>
+          <div class="campo"><label for="c3">Assunto</label>
+            <select id="c3">
+              <option>Dúvidas sobre a Tenda</option>
+              <option>Quero visitar um evento público</option>
+              <option>Quero ser membro</option>
+              <option>Doações</option>
+              <option>Imprensa e parcerias</option>
+            </select>
+          </div>
+          <div class="campo"><label for="c4">Mensagem</label><textarea id="c4" rows="4" placeholder="Escreva sua mensagem"></textarea></div>
+          <button class="btn btn--primary" type="submit">Enviar mensagem</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="fbrand">
+          <img src="../assets/logo.jpg" alt="">
+          <b>Tenda de Jurema<br>Reis Malunguinho</b>
+        </div>
+        <p>Entidade religiosa de Jurema Sagrada, com CNPJ, sediada em Araguaína / Tocantins. Desde 2017.</p>
+      </div>
+      <div>
+        <h4>Navegue</h4>
+        <ul>
+          <li><a href="#tenda">A Tenda</a></li>
+          <li><a href="#agenda">Agenda</a></li>
+          <li><a href="#noticias">Notícias</a></li>
+          <li><a href="#galeria">Galeria</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Participe</h4>
+        <ul>
+          <li><a href="#doacoes">Doações</a></li>
+          <li><a href="#membros">Área de Membros</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="#">Links oficiais</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Institucional</h4>
+        <ul>
+          <li><a href="#">Estatuto e normas da casa</a></li>
+          <li><a href="#">Política de privacidade (LGPD)</a></li>
+          <li><a href="#">Transparência</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbottom">
+      <span>© 2026 Tenda de Jurema Reis Malunguinho · Todos os direitos reservados</span>
+      <span>Protótipo institucional · Modelo 2 “Jurema Viva” · conteúdo de exemplo</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

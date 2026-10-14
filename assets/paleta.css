@@ -1,0 +1,125 @@
+/* ============================================================================
+   Tenda de Jurema Reis Malunguinho — Tokens de design
+   Paleta extraída da logo oficial (68.085 amostras quantizadas por HSV).
+
+   Uso: importe este arquivo antes de qualquer folha de estilo da aplicação.
+       <link rel="stylesheet" href="/static/css/paleta.css">
+   Estes nomes devem ser a fonte única de verdade das cores do projeto.
+   ============================================================================ */
+
+:root {
+  /* ---------- Neutros profundos (34,1% da logo) ---------- */
+  --cor-preto-ritual:  #0B0806;  /* fundo mais profundo */
+  --cor-carvao:        #16110C;  /* superfície escura padrão */
+  --cor-terra-900:     #241A12;  /* fundo secundário escuro */
+  --cor-terra-700:     #3E2C1E;  /* cartões sobre fundo escuro */
+  --cor-terra-500:     #5A4230;  /* marrom terra — 48,8% da logo */
+  --cor-terra-300:     #8A6B4F;  /* marrom claro, bordas suaves */
+
+  /* ---------- Ouro e bronze (2,5% da logo — usar como ACENTO) ---------- */
+  --cor-bronze:        #9C7A45;  /* molduras, filetes, selos */
+  --cor-ouro:          #C9A45C;  /* cor de destaque principal */
+  --cor-ouro-claro:    #E8CE9A;  /* títulos sobre fundo escuro, hover */
+  --cor-ouro-brilho:   #F7E7C0;  /* realce máximo, gradientes */
+  --cor-ouro-suave:    #F0DFB4;  /* fundos de realce sobre claro */
+
+  /* ---------- Verde jurema (8,4% da logo — as folhas) ---------- */
+  --cor-verde-900:     #1B2718;  /* blocos institucionais escuros */
+  --cor-verde-800:     #2B3D26;  /* verde profundo — rodapé, cabeçalhos */
+  --cor-verde-700:     #3A5133;  /* botão primário */
+  --cor-verde-500:     #4A6340;  /* verde jurema de referência */
+  --cor-verde-300:     #7A9668;  /* ícones e acentos sobre claro */
+  --cor-verde-200:     #B9CBA6;  /* texto sobre verde profundo */
+  --cor-verde-100:     #DCE7CF;  /* chips e fundos de ícone */
+
+  /* ---------- Areia e creme (5,8% da logo) ---------- */
+  --cor-areia:         #E2D3B8;  /* texto principal sobre fundo escuro */
+  --cor-areia-clara:   #F2E7D5;  /* títulos sobre fundo escuro */
+  --cor-pergaminho:    #F7F1E4;  /* fundo claro orgânico */
+  --cor-papel:         #F4EFE3;  /* fundo claro editorial */
+  --cor-creme:         #FDFAF3;  /* cartões sobre fundo claro */
+  --cor-branco:        #FFFFFF;
+
+  /* ---------- Tinta (texto sobre fundo claro) ---------- */
+  --cor-tinta:         #171310;
+  --cor-tinta-2:       #454A41;
+  --cor-tinta-3:       #767C71;
+
+  /* ---------- Linhas e sombras ---------- */
+  --linha-ouro:        rgba(201, 164, 92, 0.24);
+  --linha-ouro-forte:  rgba(201, 164, 92, 0.45);
+  --linha-escura:      rgba(23, 19, 16, 0.18);
+  --linha-escura-forte:rgba(23, 19, 16, 0.55);
+  --sombra-suave:      0 14px 40px -22px rgba(43, 61, 38, 0.45);
+  --sombra-cartao:     0 1px 2px rgba(21,23,19,.05), 0 12px 28px -18px rgba(21,23,19,.28);
+
+  /* ---------- Tipografia ---------- */
+  --fonte-display: 'Cinzel', Georgia, 'Times New Roman', serif;      /* títulos heráldicos */
+  --fonte-serif:   'Cormorant Garamond', Georgia, serif;             /* corpo cerimonial */
+  --fonte-sans:    'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --fonte-editorial: 'Archivo', 'Inter', system-ui, sans-serif;
+  --fonte-suave:   'Fraunces', Georgia, serif;                       /* títulos orgânicos */
+  --fonte-ui:      'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  --fonte-ritual:  'Marcellus', Georgia, serif;
+  --fonte-ritual-sans: 'Jost', system-ui, sans-serif;
+
+  /* ---------- Escala tipográfica (1.250 — major third) ---------- */
+  --txt-xs:  0.68rem;
+  --txt-sm:  0.82rem;
+  --txt-md:  1rem;
+  --txt-lg:  1.25rem;
+  --txt-xl:  1.5625rem;
+  --txt-2xl: 1.953rem;
+  --txt-3xl: 2.441rem;
+  --txt-4xl: 3.052rem;
+
+  /* ---------- Espaçamento (base 8px) ---------- */
+  --esp-1: 0.25rem;  --esp-2: 0.5rem;   --esp-3: 0.75rem;
+  --esp-4: 1rem;     --esp-5: 1.5rem;   --esp-6: 2rem;
+  --esp-7: 3rem;     --esp-8: 4rem;     --esp-9: 5.5rem;
+
+  /* ---------- Raios e largura ---------- */
+  --raio-sm: 10px;  --raio-md: 16px;  --raio-lg: 26px;  --raio-pill: 100px;
+  --largura-conteudo: 1200px;
+  --largura-larga:    1280px;
+
+  /* ---------- Movimento ---------- */
+  --transicao-rapida: 0.2s ease;
+  --transicao:        0.32s ease;
+}
+
+/* Respeita a preferência do usuário por menos movimento (RNF-007 / acessibilidade) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================================
+   Regra de proporção da paleta
+   A logo é 48,8% marrom, 34,1% sombra, 8,4% verde, 5,8% areia e apenas 2,5% ouro.
+   Mantenha essa proporção: o ouro só funciona como acento.
+   ----------------------------------------------------------------------------
+   Áreas grandes   -> terra-500 / terra-900 / verde-800 / pergaminho / papel
+   Texto           -> areia / areia-clara (escuro) · tinta (claro)
+   Acento e filete -> bronze, ouro, ouro-claro     (menos de 10% da tela)
+   Ação primária   -> verde-700 (institucional) ou gradiente ouro->bronze (destaque)
+   ============================================================================ */
+
+/* ---------- Utilitários mínimos, opcionais ---------- */
+.fundo-noite      { background: var(--cor-preto-ritual); color: var(--cor-areia); }
+.fundo-carvao     { background: var(--cor-carvao);       color: var(--cor-areia); }
+.fundo-verde      { background: var(--cor-verde-800);    color: var(--cor-verde-200); }
+.fundo-pergaminho { background: var(--cor-pergaminho);   color: var(--cor-tinta); }
+
+.texto-ouro       { color: var(--cor-ouro); }
+.texto-areia      { color: var(--cor-areia); }
+.filete-ouro      { border: 1px solid var(--linha-ouro); }
+
+.gradiente-ouro {
+  background: linear-gradient(135deg, var(--cor-ouro-claro), var(--cor-bronze));
+  color: #1A1206;
+}
